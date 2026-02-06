@@ -15,7 +15,7 @@ RUN curl -L https://github.com/erebe/wstunnel/releases/latest/download/wstunnel-
 
 # SSH setup
 RUN mkdir /var/run/sshd
-RUN echo 'Root@123:Root@321' | chpasswd
+RUN echo 'root:root' | chpasswd
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
